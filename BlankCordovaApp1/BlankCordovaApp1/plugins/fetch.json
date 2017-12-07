@@ -1,0 +1,27 @@
+{
+    "phonegap-plugin-mobile-accessibility": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phonegap/phonegap-mobile-accessibility.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-tts": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-tts"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-speechrecognition": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-speechrecognition"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
