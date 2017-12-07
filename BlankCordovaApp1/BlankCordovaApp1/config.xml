@@ -3,7 +3,6 @@
   <name>BlankCordovaApp1</name>
   <description>Apache Cordova kullanarak Android, iOS ve Evrensel Windows Platformu gibi birden çok platformu hedefleyen bir uygulama oluşturmanıza yardımcı olan boş bir proje.</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Adınızı buraya girin</author>
-  <vs:is-from-base-template>true</vs:is-from-base-template>
   <vs:template-name>BlankJS</vs:template-name>
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
   <engine name="android" spec="5.2.1" />
