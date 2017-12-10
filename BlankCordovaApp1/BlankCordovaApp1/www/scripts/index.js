@@ -27,4 +27,64 @@
     function onResume() {
         // TODO: Bu uygulama yeniden etkinleştirildi. Burada uygulama durumunu geri yükleyin.
     };
-} )();
+
+    
+
+})();
+// Handle results
+function startRecognition() {
+    window.plugins.speechRecognition.startListening(
+        function (result) {
+            // Show results in the console
+            window.TTS.speak({
+                text: result,
+                locale: 'tr-TR',
+                rate: 1.0
+            }, function () {
+            }, function (error) {
+                alert(error);
+            });
+        }, function (err) {
+            console.error(err);
+        }, {
+            language: "tr-TR",
+            showPopup: true,
+            matches: 1
+        });
+}
+function sesliArama() {
+    // Verify if recognition is available
+    alert("function fired");
+    window.plugins.speechRecognition.isRecognitionAvailable(function (available) {
+
+        if (!available) {
+            window.TTS.speak({
+                text: 'Cihazınız sesli arama için uygun değildir',
+                locale: 'tr-TR',
+                rate: 1.0
+            }, function () {
+            }, function (error) {
+                alert(error);
+            });
+        }
+
+        // Check if has permission to use the microphone
+        window.plugins.speechRecognition.hasPermission(function (isGranted) {
+            if (isGranted) {
+                startRecognition();
+            } else {
+                // Request the permission
+                window.plugins.speechRecognition.requestPermission(function () {
+                    // Request accepted, start recognition
+                    startRecognition();
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+        }, function (err) {
+            console.log(err);
+        });
+    }, function (err) {
+        console.log(err);
+    });
+}//end of sesliArama
