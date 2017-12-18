@@ -6,41 +6,41 @@ body {
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
     -webkit-user-select: none;
-	background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
-	
-    background-color:#32383d;
+    background: url(../images/bg2.png) repeat-y center top;
+    /*background-image: linear-gradient(top, #0078d7 21%, #005faa 51%);
+    background-image: -webkit-linear-gradient(top, #0078d7 21%, #005faa 51%);
+    background-image: -ms-linear-gradient(top, #0078d7 21%, #005faa 51%);
+    background-image: -webkit-gradient( radial, left top, left bottom, color-stop(0.21, #0078d7), color-stop(0.51, #005faa)  );*/
+    background-attachment: fixed;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-transform: uppercase;
+    width: 100%;
+    background-color: #32383d;
     font-family: 'RobotoRegular', 'Droid Sans', 'Segoe UI', Segoe, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
-    font-size:12px;
+    font-size: 12px;
 }
 
+
+
 .app {
-    background: url(../images/cordova.png) no-repeat center top; 
+
     position: absolute;             
     left: 50%;
-    top: 50%;
+    top: 25%;
     height: 50px;                  
     width: 225px;                   
     text-align: center;
     padding: 180px 0px 0px 0px;     
     margin: -115px 0px 0px -112px;
+}
+
+.button {
+    background-color: rgba(0, 0, 0, 0);
+    border:none ;
 }
 
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -95,3 +95,8 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+
+
+
+

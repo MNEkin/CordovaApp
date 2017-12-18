@@ -11,6 +11,8 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
         <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src='scripts/jquery-1.10.1.min.js'></script>
@@ -21,16 +23,12 @@
     </head>
     <body>
         <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink" title="burası yanıp sönen tuşların bulunduğu div">
-                tuşların bulunduğu divin içerisi.
-                <p class="event listening">Cihaza Bağlanılıyor</p>
-                <p class="event received">Cihaz Hazır</p>
-            </div>
-            <label title="yazı girdisi için etiket"><input type="text" /></label>
-            <label title="buton için etiket"><button type="button" onclick="deneme()">burası bir tuş</button></label>
-            <label title="sesli arama ile istediğiniz gazeteye ulaşmak için dokunun ve sinyal sesinden sonra aramak istediğiniz gazetenin ismini
-                   söyleyin"><button type="button" onclick="sesliArama()">Sesli Arama</button></label>
+            <label title="sesli arama ile istediğiniz gazeteye ulaşmak için dokunun ve sinyal sesinden sonra aramak istediğiniz gazetenin ismini söyleyin">
+                <button class=" button" type="button" onclick="sesliArama()">
+                    <img src="images/search.png" width="100%" />
+                </button><br><br><br><br>
+                <a href="list.html" style="color:white">liste sayfası</a>
+            </label>
         </div>
         <script type="text/javascript">
             function deneme() {
