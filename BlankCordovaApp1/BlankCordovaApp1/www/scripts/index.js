@@ -36,13 +36,41 @@ function startRecognition() {
     window.plugins.speechRecognition.startListening(
         function (result) {
             // Show results in the console
-            window.TTS.speak({
+           /* window.TTS.speak({
                 text: result,
                 locale: 'tr-TR',
                 rate: 1.0
             }, function () {
             }, function (error) {
                 alert(error);
+            });*/
+            $.ajax({
+                type: "POST",
+                url: "https://lise.okulrehberi.org/silbunu.php",
+                success: function (response) {
+                    if (response != "hata")
+                    {
+
+                    }
+                    else
+                    {
+                        var obj = JSON.parse(response);
+                        alert(obj);
+                        /*window.TTS.speak({
+                            text: result,
+                            locale: 'tr-TR',
+                            rate: 1.0
+                        }, function () {
+                        }, function (error) {
+                            alert(error);
+                        });*/
+                    }
+                    
+                },
+                error: function (data) {
+                    console.log(data);
+                    alert('Not working!');
+                }
             });
         }, function (err) {
             console.error(err);

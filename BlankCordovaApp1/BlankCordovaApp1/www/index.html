@@ -5,15 +5,15 @@
         Aşağıdaki meta etiketindeki içerik güvenliği ilkesini gerektiği gibi özelleştirin. Satır içi JavaScript’i etkinleştirmek için default-src’ye “unsafe-inline” özelliği ekleyin.
 	Ayrıntılı bilgi için http://go.microsoft.com/fwlink/?LinkID=617521 adresini ziyaret edin.
     -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
-        
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' data: gap: https://code.jquery.com 'unsafe-inline'; script-src 'self' data: gap: https://code.jquery.com 'unsafe-inline'; media-src *; connect-src https://lise.okulrehberi.org ; img-src 'self' data: content:;">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
 
-        <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="scripts/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src='scripts/jquery-1.10.1.min.js'></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="scripts/platformOverrides.js"></script>
         <script type="text/javascript" src="scripts/index.js"></script>
@@ -34,7 +34,21 @@
         </div>
         <script type="text/javascript">
             function deneme() {
-                alert("deneme");
+                
+                $.ajax({
+                    url: "https://lise.okulrehberi.org/silbunu.php/",
+                    type: "POST",
+                    data: {
+                        "name": "Cordova"
+                    },
+                    success: function (datat) {
+                        var obj = JSON.parse(datat);
+                        alert("success" + obj + datat);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert(textStatus + jqXHR.responseText + errorThrown);
+                    }
+                });
             }
         </script>
         
